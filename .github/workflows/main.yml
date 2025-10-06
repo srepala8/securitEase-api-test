@@ -46,17 +46,38 @@ jobs:
             POM_DIR=$(dirname "$POM_PATH")
             echo "POM_DIR=$POM_DIR" >> $GITHUB_ENV
           fi
-          echo "POM directory is $POM_DIR"
+          echo "Using POM directory: $POM_DIR"
 
-      # Step 5: Run Maven tests
-      - name: Run Maven tests
+      # Step 5: Verify project structure
+      - name: List source and test folders
         run: |
-          cd $POM_DIR
-          mvn clean test -X
+          echo "Listing Java source files..."
+          ls -R ${{ env.POM_DIR }}/src/main/java || echo "No main/java folder"
+          echo "Listing test files..."
+          ls -R ${{ env.POM_DIR }}/src/test/java || echo "No test/java folder"
+
+      # Step 6: Build project and compile tests
+      - name: Build and compile tests
+        run: |
+          cd ${{ env.POM_DIR }}
+          mvn clean compile test-compile -X
         env:
           MAVEN_OPTS: "-Dmaven.repo.local=$HOME/.m2/repository"
 
-      # Step 6: Upload TestNG report
+      # Step 7: Verify compiled test classes
+      - name: List compiled test classes
+        run: |
+          ls -R ${{ env.POM_DIR }}/target/test-classes
+
+      # Step 8: Run TestNG tests
+      - name: Run TestNG tests
+        run: |
+          cd ${{ env.POM_DIR }}
+          mvn test -X
+        env:
+          MAVEN_OPTS: "-Dmaven.repo.local=$HOME/.m2/repository"
+
+      # Step 9: Upload TestNG reports
       - name: Upload TestNG report
         if: always()
         uses: actions/upload-artifact@v4
