@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 06 19:09:15 SAST 2025</td>
+<td>Started on:</td><td>Mon Oct 06 21:00:01 SAST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>3 seconds (3040 ms)</td>
+<tr><td>Total time:</td><td>2 seconds (2858 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -70,24 +70,26 @@ function toggleAllBoxes() {
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.securitEase.api.test.CountryLanguagesTest.validateSouthAfricanSignLanguageRecognition()'><b>validateSouthAfricanSignLanguageRecognition</b><br>Test class: com.securitEase.api.test.CountryLanguagesTest<br>Test method: Verify SASL is among South Africa's official languages<br/>
-<a href="#Output-1262693971" onClick='toggleBox("Output-1262693971", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.securitEase.api.test.ApiSchemaValidationTest.validateCountrySchema()'><b>validateCountrySchema</b><br>Test class: com.securitEase.api.test.ApiSchemaValidationTest<br/>
+<a href="#Output-434167806" onClick='toggleBox("Output-434167806", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1262693971" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1262693971">
-<b>South Africa Languages (from API):</b><br><pre>{afr=Afrikaans, eng=English, nbl=Southern Ndebele, nso=Northern Sotho, sot=Southern Sotho, ssw=Swazi, tsn=Tswana, tso=Tsonga, ven=Venda, xho=Xhosa, zul=Zulu}</pre><br/>
-<b>❌ Assertion Failed:</b> SASL not found in South Africa's language list.<br/>
+<a href="#Output-434167806" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-434167806">
+<b>API Response:</b><br><pre>{
+    "message": "'fields' query not specified",
+    "status": 400
+}</pre><br/>
+<b>Schema Validation:</b> ✅ PASSED<br/>
 </div>
 </td>
 <td></td>
 <td>2</td>
-<td>com.securitEase.api.test.CountryLanguagesTest@79179359</td></tr>
+<td>com.securitEase.api.test.ApiSchemaValidationTest@1046d517</td></tr>
 </table><p>
 </body>
 </html>

@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.securitEase.api.test.CountryLanguagesTest">
+      <class name="com.securitEase.api.test.ApiSchemaValidationTest">
         <methods>
+          <include name="validateCountrySchema"/>
           <include name="setUp"/>
-          <include name="validateSouthAfricanSignLanguageRecognition"/>
         </methods>
-      </class> <!-- com.securitEase.api.test.CountryLanguagesTest -->
+      </class> <!-- com.securitEase.api.test.ApiSchemaValidationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
