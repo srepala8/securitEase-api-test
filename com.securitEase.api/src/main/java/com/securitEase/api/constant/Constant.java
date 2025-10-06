@@ -4,7 +4,7 @@ public class Constant {
 	
 
 	 //API Testing Constants
-   public static final String API_PROPERTY_FILE_PATH = "C:\\Users\\srepa\\git\\repository3\\com.securitEase.api\\src\\main\\java\\com\\securitEase\\api\\config\\config.properties";
+   public static final String API_PROPERTY_FILE_PATH = "config/config.properties";
   
 
  
