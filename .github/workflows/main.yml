@@ -31,17 +31,35 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2
 
-      # Step 4: Build and run TestNG tests
+      # Step 4: Detect pom.xml location
+      - name: Detect pom.xml location
+        id: find-pom
+        run: |
+          if [ -f "pom.xml" ]; then
+            echo "POM_DIR=." >> $GITHUB_ENV
+          else
+            POM_PATH=$(find . -name "pom.xml" | head -n 1)
+            if [ -z "$POM_PATH" ]; then
+              echo "No pom.xml found!"
+              exit 1
+            fi
+            POM_DIR=$(dirname "$POM_PATH")
+            echo "POM_DIR=$POM_DIR" >> $GITHUB_ENV
+          fi
+          echo "POM directory is $POM_DIR"
+
+      # Step 5: Run Maven tests
       - name: Run Maven tests
         run: |
+          cd $POM_DIR
           mvn clean test -X
         env:
           MAVEN_OPTS: "-Dmaven.repo.local=$HOME/.m2/repository"
 
-      # Step 5: Upload TestNG HTML report
+      # Step 6: Upload TestNG report
       - name: Upload TestNG report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: TestNG-Report
-          path: target/surefire-reports/
+          path: ${{ env.POM_DIR }}/target/surefire-reports/
