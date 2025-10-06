@@ -42,7 +42,7 @@ public class ApiSchemaValidationTest {
 	
 	
 
-    @Test
+    @Test(description="Verify that Correct API Endpoint Schema Configuration")
     public void validateCountrySchema() {
     	
     	RestAssured.baseURI = properties.getProperty("baseURL");
