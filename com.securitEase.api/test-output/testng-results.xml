@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[<b>South Africa Languages (from API):</b><br><pre>{afr=Afrikaans, eng=English, nbl=Southern Ndebele, nso=Northern Sotho, sot=Southern Sotho, ssw=Swazi, tsn=Tswana, tso=Tsonga, ven=Venda, xho=Xhosa, zul=Zulu}</pre>]]>
+    </line>
+    <line>
+      <![CDATA[<b>❌ Assertion Failed:</b> SASL not found in South Africa's language list.]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2025-10-06T19:09:15 SAST" name="Default suite" finished-at="2025-10-06T19:09:18 SAST" duration-ms="3040">
+    <groups>
+    </groups>
+    <test started-at="2025-10-06T19:09:15 SAST" name="Default test" finished-at="2025-10-06T19:09:18 SAST" duration-ms="3040">
+      <class name="com.securitEase.api.test.CountryLanguagesTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.securitEase.api.test.CountryLanguagesTest@79179359]" started-at="2025-10-06T19:09:15 SAST" name="setUp" finished-at="2025-10-06T19:09:15 SAST" duration-ms="11" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateSouthAfricanSignLanguageRecognition()[pri:0, instance:com.securitEase.api.test.CountryLanguagesTest@79179359]" started-at="2025-10-06T19:09:15 SAST" name="validateSouthAfricanSignLanguageRecognition" description="Verify SASL is among South Africa&#039;s official languages" finished-at="2025-10-06T19:09:18 SAST" duration-ms="2980" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[<b>South Africa Languages (from API):</b><br><pre>{afr=Afrikaans, eng=English, nbl=Southern Ndebele, nso=Northern Sotho, sot=Southern Sotho, ssw=Swazi, tsn=Tswana, tso=Tsonga, ven=Venda, xho=Xhosa, zul=Zulu}</pre>]]>
+            </line>
+            <line>
+              <![CDATA[<b>❌ Assertion Failed:</b> SASL not found in South Africa's language list.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validateSouthAfricanSignLanguageRecognition -->
+      </class> <!-- com.securitEase.api.test.CountryLanguagesTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
